@@ -120,7 +120,7 @@ CREATE TABLE product_price (
 
 ```
 
-<img width="971" height="1129" alt="all_tables" src="https://github.com/user-attachments/assets/f9003d04-dfb4-4231-85b1-7d54936f808b" />
+<img width="1170" height="1418" alt="hw1" src="https://github.com/user-attachments/assets/4df0c17f-56c7-4156-b79f-f714df17472d" />
 
 ### 3. Нормализовать базу данных (от 1НФ до 3НФ), описав, к какой нормальной форме приводится таблица и почему таблица в этой нормальной форме изначально не находилась.
 Плоские таблици витрин `tmp_transaction` и `tmp_customer` изначально находились в 1NF
