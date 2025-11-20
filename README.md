@@ -126,7 +126,7 @@ CREATE TABLE ref_product_order (
 );
 ```
 
-<img width="1163" height="1615" alt="hw-1-v2-1" src="https://github.com/user-attachments/assets/d32713fc-3884-4007-a767-574ebc02c97f" />
+<img width="1163" height="1575" alt="hw-1-v2-2" src="https://github.com/user-attachments/assets/fc6dc4df-c479-434d-933d-4cf982f328eb" />
 
 ### 3. Нормализовать базу данных (от 1НФ до 3НФ), описав, к какой нормальной форме приводится таблица и почему таблица в этой нормальной форме изначально не находилась.
 Плоские таблици витрин `tmp_transaction` и `tmp_customer` изначально находились в 1NF
