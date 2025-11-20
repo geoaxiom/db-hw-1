@@ -55,7 +55,7 @@ CREATE TABLE property_valuation (
     property_valuation_id INT PRIMARY KEY,
     property_valuation_value INT
 );
-
+    
 CREATE TABLE customer (
     customer_id INT PRIMARY KEY,
     first_name VARCHAR(255),
@@ -64,17 +64,22 @@ CREATE TABLE customer (
     DOB DATE,
     deceased_indicator BOOLEAN,
     owns_car BOOLEAN,
-    address_id INT,
     job_id INT,
     industry_category_id INT,
     wealth_segment_id INT,
     property_valuation_id INT,
     FOREIGN KEY (gender_id) REFERENCES gender(gender_id),
-    FOREIGN KEY (address_id) REFERENCES address(address_id),
     FOREIGN KEY (job_id) REFERENCES job(job_id),
     FOREIGN KEY (industry_category_id) REFERENCES industry_category(industry_category_id),
     FOREIGN KEY (wealth_segment_id) REFERENCES wealth_segment(wealth_segment_id),
     FOREIGN KEY (property_valuation_id) REFERENCES property_valuation(property_valuation_id)
+);
+
+CREATE TABLE ref_customer_address (
+    address_id INT,
+    customer_id INT,
+	FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+	FOREIGN KEY (address_id) REFERENCES address(address_id)
 );
 
 CREATE TABLE transaction (
@@ -94,13 +99,6 @@ CREATE TABLE "order" (
     order_status VARCHAR(50)
 );
 
-CREATE TABLE ref_product_order (
-    order_id INT,
-    product_id INT,
-    FOREIGN KEY (product_id) REFERENCES product(product_id),
-    FOREIGN KEY (order_id) REFERENCES "order"(order_id)
-);
-
 CREATE TABLE product (
     product_id INT PRIMARY KEY,
     product_line VARCHAR(50),
@@ -118,6 +116,14 @@ CREATE TABLE product_price (
     FOREIGN KEY (product_id) REFERENCES product(product_id)
 );
 
+CREATE TABLE ref_product_order (
+    order_id INT,
+    product_id INT,
+	product_price_id INT,
+    FOREIGN KEY (product_id) REFERENCES product(product_id),
+    FOREIGN KEY (order_id) REFERENCES "order"(order_id),
+	FOREIGN KEY (product_price_id) REFERENCES product_price(product_price_id)
+);
 ```
 
 <img width="1163" height="1615" alt="hw-1-v2-1" src="https://github.com/user-attachments/assets/d32713fc-3884-4007-a767-574ebc02c97f" />
